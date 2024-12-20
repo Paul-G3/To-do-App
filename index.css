@@ -9,6 +9,8 @@
 body
 {
     height: 100vh;
+    background: linear-gradient( rgb(13, 181, 227), black);   
+    
 }
 
 header
@@ -25,10 +27,22 @@ header{
 
 .logo
 {
-    width: 10vw;
-    height: 95%;
-    background-color: black;
+    min-width:10vw;
+    min-height: 95%; 
     border-radius: 50%;
+}
+
+.logo img
+{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius: 50%;
+}
+
+.logo h2
+{
+    color: white;
 }
 
 .right-header
@@ -47,6 +61,53 @@ header{
     margin: 1.5vw;
 }
 
+.modes-btn
+{
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+}
+.modes-btn i 
+{
+   font-size: 1.3rem;
+}
+
+.add-task
+{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.add-task i 
+{ 
+   font-size: 1.8rem;
+   color: white;
+}
+
+.add-task:hover i  
+{  
+   color: red;
+}
+
+.delete-btn
+{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.delete-btn:hover i
+{
+    color: red;
+}
+
+.delete-btn i
+{
+    font-size: 1.4rem;
+    color: white;
+}
+
 main{
     display: flex;
     justify-content: center;
@@ -57,8 +118,7 @@ main{
 .container
 {
     width: 90%;
-    height: 90%;
-    border: 2px solid black;
+    height: 90%; 
 }
 
 .task
@@ -87,12 +147,18 @@ main{
 
  .items-holder
  {
-    width: 90%;
-    border: 2px solid black;
+    width: 90%; 
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5vh;
+    margin-bottom: 1.8vh;
  }
+
+ p
+ {
+    font-size: 1.4rem;
+    color: white;
+ }
+
 
 
  /*scroll style*/
@@ -118,3 +184,174 @@ main{
 {
   background: #555;
  }
+
+ /*js css */
+
+ .modes
+ {
+    background: linear-gradient( rgb(32, 224, 32),black );
+    color: white;
+ }
+
+ /*modalcss */
+
+.modal-container
+{
+    display: none;
+}
+ .modal-background
+ {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+ }
+
+ .success-modal
+ {
+    position: fixed;
+    top: 10vh; 
+    height: fit-content;
+    left: 35vw;
+    right: 35vw;
+    background-color:white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 5vw;
+    text-align: center;
+    animation: successAnimation 0.5s;
+    display: none;
+ }
+
+ @keyframes successAnimation
+ {
+    from 
+    {
+        top: 0;
+        bottom: 100vh;
+        opacity: 0.2;
+    }
+    to
+    {
+        top: 10vh; 
+    }
+ }
+
+ .success-modal i 
+ {
+    font-size: 12rem;
+    color: rgb(102, 219, 102);
+    animation: animateIcon 6s infinite;
+ }
+
+ @keyframes animateIcon
+ {
+    from
+    {
+        opacity: 0.3;
+    }
+    to
+    {
+        opacity: 1;
+    }
+ }
+
+ .ok
+ {
+    font-size: 1.3rem;
+    padding: 8px 12px;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    position: absolute;
+    right: 2vw;
+    bottom: 1%;
+    border: 2px solid rgb(102, 219, 102);
+    background-color: rgb(102, 219, 102);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;    
+ }
+
+
+
+ .ok:hover
+ {
+    background-color: transparent;
+    color: rgb(102, 219, 102);
+ }
+ .text
+ {
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+    margin-top: 1.5vh;    
+ }
+
+ .confirmation-modal
+ {
+    position: fixed;
+    top: 10vh; 
+    height: fit-content;
+    left: 35vw;
+    right: 35vw; 
+    background-color:white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 5vw;
+    text-align: center;
+    display: none;
+    animation: successAnimation 0.5s;
+ }
+
+ .confirmation-modal i 
+ {
+    font-size: 12rem;
+    color: rgb(224, 42, 42);
+ }
+
+ .buttons
+ {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2vh;
+}
+
+.yes
+{
+    font-size: 1.3rem;
+    padding: 8px 12px;
+    border-radius: 12px;
+     background-color: rgb(224, 42, 42);
+     border: 2px solid rgb(224, 42, 42);
+     color: white;
+     cursor: pointer;
+     transition: 0.5s;
+}
+
+.yes:hover
+{
+    background-color: transparent;
+    color: red;
+}
+
+.no
+{ 
+    font-size: 1.3rem;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 2px solid rgb(102, 219, 102);
+    background-color: rgb(102, 219, 102);
+     color: white;
+     cursor: pointer;
+     transition: 0.5s;
+}
+
+.no:hover
+{
+    background-color: transparent;
+    color: rgb(102, 219, 102);
+}
