@@ -209,6 +209,66 @@ main{
     background-color: rgba(0,0,0,0.5);
  }
 
+ .Deleted-modal
+ {
+    position: fixed;
+    top: 10vh; 
+    height: fit-content;
+    left: 35vw;
+    right: 35vw;
+    background-color:white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 5vw;
+    text-align: center;
+    animation: successAnimation 0.5s; 
+ }
+
+ .Deleted-modal i 
+ {
+    font-size: 12rem;
+    color: rgb(102, 219, 102);
+    animation: animateIcon 6s infinite;
+ }
+
+ /* @keyframes DeleteAnimation{
+
+    from
+    {
+      transform: scale(0.5);
+    }
+
+    to
+    {
+        transform: scale(1);
+    }
+ } */
+
+ .delete-Ok
+ {
+    font-size: 1.3rem;
+    padding: 8px 12px;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    position: absolute;
+    right: 2vw;
+    bottom: 1%;
+    border: 2px solid rgb(102, 219, 102);
+    background-color: rgb(102, 219, 102);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;    
+ }
+
+
+ .delete-Ok:hover
+ {
+    background-color: transparent;
+    color: rgb(102, 219, 102);
+ }
+
  .success-modal
  {
     position: fixed;
@@ -222,8 +282,7 @@ main{
     flex-direction: column;
     padding: 5vh 5vw;
     text-align: center;
-    animation: successAnimation 0.5s;
-    display: none;
+    animation: successAnimation 0.3s; 
  }
 
  @keyframes successAnimation
@@ -232,7 +291,7 @@ main{
     {
         top: 0;
         bottom: 100vh;
-        opacity: 0.2;
+        opacity: 0.3;
     }
     to
     {
@@ -277,7 +336,6 @@ main{
  }
 
 
-
  .ok:hover
  {
     background-color: transparent;
@@ -304,6 +362,7 @@ main{
     padding: 5vh 5vw;
     text-align: center;
     display: none;
+    box-shadow: 0 0 4px black;
     animation: successAnimation 0.5s;
  }
 
@@ -311,6 +370,19 @@ main{
  {
     font-size: 12rem;
     color: rgb(224, 42, 42);
+    animation: Delete 1.3s;
+ }
+
+ @keyframes Delete 
+ {
+    from
+    {
+        transform: rotate(60deg);
+    }
+    to
+    {
+        transform: rotate(0deg);
+    }
  }
 
  .buttons
